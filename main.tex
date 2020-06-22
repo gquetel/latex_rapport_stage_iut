@@ -1,0 +1,241 @@
+\documentclass[french]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{rotating}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{babel}
+\usepackage{listings}
+\usepackage{listings}
+\usepackage[acronym]{glossaries}
+ 
+
+
+
+%=========================================================================
+%                          Commandes
+%=========================================================================
+\makeglossaries
+ 
+% Nous permet d'insérer du texte et le formater en JSON
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1} 
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+%=========================================================================
+%                            Acronymes
+%=========================================================================
+\newacronym{iut}{IUT}{Institut Universitaire et Technologique}
+
+%=========================================================================
+%                            Glossaire
+%=========================================================================
+
+
+\newglossaryentry{vannes}
+{
+    name=vannes,
+    description={ Vannes est une ville fortifiée située dans la région Bretagne, au nord-ouest de la France. Sa vieille ville se caractérise par d'étroites rues pavées et des portes médiévales. }
+}
+
+%=========================================================================
+%                           Première page
+%=========================================================================
+
+
+\begin{document}
+    \begin{titlepage}
+    
+    \begin{minipage}{0.5\textwidth}
+        \begin{flushleft}
+            \includegraphics[scale=0.13]{Images/1200px-Logo_IUT_Vannes.svg.png}\\[0.5cm]
+            \large{\textbf{Département informatique \\
+            Institut Universitaire de Technologie\\
+            8 Rue Montaigne\\
+            56000 Vannes \\
+            }}
+        \end{flushleft}
+    \end{minipage}
+    ~
+    \begin{minipage}{0.5\textwidth}
+        \begin{flushright} \large
+            \LARGE{\textsc{Nom} Prénom}
+        \end{flushright}
+    \end{minipage}\\
+
+    %Titre du document
+   \begin{flushright}
+        { \Large \textbf{ \bfseries Rapport de stage \\ de fin d'études}}\\[1cm] 
+   \end{flushright}
+   
+   \begin{center}
+      \begin{framed}
+        \Large{\textbf{Mission du stage
+        }}
+        \end{framed}
+    \end{center}
+    
+    \begin{center}
+        \includegraphics[scale=0.25]{Images/UBS-LOGO-RVB-Fd-Transparent.png}
+        \label{fig:logo_entreprise}
+    \end{center}
+ \vspace{1cm}
+    
+    \begin{minipage}{0.6\textwidth}
+        \begin{flushleft}
+            \large{\textbf{Maitre de Stage :} Prénom \textsc{Nom} \\
+            \textbf{Entreprise},  Ville   \\ Addresse
+            }
+        \end{flushleft}
+    \end{minipage}
+    ~
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright} \large
+            \includegraphics[scale=0.25]{Images/UBS-LOGO-RVB-Fd-Transparent.png}
+        \end{flushright}
+    \end{minipage}\\
+   
+    \end{titlepage}
+
+
+%=========================================================================
+%                           Remerciements
+%=========================================================================
+\normalfont{\huge{\bfseries{Remerciements}}}\vspace*{25px}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+\clearpage
+
+%=========================================================================
+%                           Table des matières
+%=========================================================================
+\tableofcontents
+\clearpage
+
+
+%=========================================================================
+%                            Document
+%=========================================================================
+
+\chapter{nom\_chapitre}
+    \section{nom\_section}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    
+    
+
+    \subsection{Utiliser les acronymes et le glossaire}
+    % Utilisation de l'acronyme
+    Voici une photo de l'\textbf{\acrshort{iut}}. 
+    % Utilisation du glossaire
+    l'IUT est à \textbf{\Gls{vannes}}
+    
+    
+    
+    \subsection{Insérer une image}
+    % Pour insérer une figure : 
+    \begin{figure}[!h]
+            \center
+            \includegraphics[width=0.5\textwidth]{Images/AccueilIut.jpg}
+            \caption{Description}
+            \label{fig:AccueilIut}
+    \end{figure}
+    % Pour référencer la figure : 
+    Sur la figure \ref{fig:AccueilIut} nous pouvons apercevoir l'entrée de l'IUT.
+    
+    
+    
+    \subsection{Insérer du code au format JSON}
+    % Utilisation de lstdefinelanguage pour écrire du texte au foramt JSON
+    \begin{lstlisting}[language=json,firstnumber=1,caption={Description du document},captionpos=b]
+    {
+        "clef": "valeur"
+    }
+    \end{lstlisting}
+    
+    
+
+%=========================================================================
+%                            Glossaire
+%=========================================================================    
+\clearpage
+%Affichage du glossaire
+\printglossaries
+
+
+
+%=========================================================================
+%                            Annexe
+%=========================================================================
+\clearpage
+\normalfont{\huge{\bfseries{Annexe}}}\vspace*{25px} % J'utilise cette syntaxe et non pas un \chapter afin que l'Annexe ne soit pas référencée dans la table des matières
+    %Insérer une image à la verticale
+   \begin{sidewaysfigure}[H]
+            \center
+            \includegraphics[width=0.5\textwidth]{Images/AccueilIut.jpg}
+            \caption{Description de l'image en annexe}
+            \label{fig:accueilIUTAnnexe}
+    \end{sidewaysfigure}
+
+
+
+
+\clearpage
+
+
+%=========================================================================
+%                            Résumé
+%=========================================================================
+
+\normalfont{\huge{\bfseries{Résumé}}}\vspace*{25px}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\textbf{Mots-clefs} : Lorem, ipsum, dolor.\\
+
+\vspace*{35px}
+
+\normalfont{\huge{\bfseries{Abstract}}}\vspace*{25px}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\textbf{Keywords} : Lorem, ipsum, dolor.\\
+
+
+
+\end{document}
+
